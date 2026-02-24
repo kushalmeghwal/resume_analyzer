@@ -5,7 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from tools.report_tool import generate_markdown_report
+try:
+    from ..tools.report_tool import generate_markdown_report
+except ImportError:
+    from tools.report_tool import generate_markdown_report
 
 try:
     from google.adk.agents import Agent  # type: ignore

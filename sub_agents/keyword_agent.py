@@ -4,7 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from tools.keyword_tool import analyze_keywords
+try:
+    from ..tools.keyword_tool import analyze_keywords
+except ImportError:
+    from tools.keyword_tool import analyze_keywords
 
 try:
     from google.adk.agents import Agent  # type: ignore

@@ -5,7 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from tools.pdf_tool import extract_pdf_text
+try:
+    from ..tools.pdf_tool import extract_pdf_text
+except ImportError:
+    from tools.pdf_tool import extract_pdf_text
 
 try:
     from google.adk.agents import Agent  # type: ignore

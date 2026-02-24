@@ -8,10 +8,17 @@ from typing import Any
 
 from dotenv import load_dotenv
 
-from sub_agents.extractor_agent import ResumeExtractionAgent
-from sub_agents.improvement_agent import ImprovementSuggestionAgent
-from sub_agents.keyword_agent import KeywordAnalysisAgent
-from sub_agents.report_agent import ReportGeneratorAgent
+try:
+    from .sub_agents.extractor_agent import ResumeExtractionAgent
+    from .sub_agents.improvement_agent import ImprovementSuggestionAgent
+    from .sub_agents.keyword_agent import KeywordAnalysisAgent
+    from .sub_agents.report_agent import ReportGeneratorAgent
+except ImportError:
+    # Fallback for direct script execution from project root.
+    from sub_agents.extractor_agent import ResumeExtractionAgent
+    from sub_agents.improvement_agent import ImprovementSuggestionAgent
+    from sub_agents.keyword_agent import KeywordAnalysisAgent
+    from sub_agents.report_agent import ReportGeneratorAgent
 
 try:
     # Google ADK integration (kept optional so local CLI still works without ADK runtime).
