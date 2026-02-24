@@ -1,0 +1,1 @@
+Python Backend Engineer role requiring Python, Django or FastAPI, REST APIs, PostgreSQL, Docker, AWS, CI/CD, unit testing, and microservices architecture.
